@@ -1,4 +1,4 @@
----@meta _
+---@meta lgi.Playerctl.PlayerManager
 
 ---@class lgi.Playerctl.PlayerManager
 ---@field players lgi.Playerctl.Player[]
@@ -19,7 +19,7 @@ function C:set_sort_func(sort_callback) end
 function C:move_player_to_top(player) end
 
 
----@class _lgi.Playerctl.PlayerManager
+---@class lgi.Playerctl.PlayerManager
 ---@operator call: lgi.Playerctl.PlayerManager
 local M
 

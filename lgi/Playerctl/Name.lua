@@ -1,4 +1,4 @@
----@meta _
+---@meta lgi.Playerctl.PlayerName
 
 ---@class lgi.Playerctl.PlayerName
 ---@field name string

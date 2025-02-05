@@ -1,29 +1,49 @@
-# awesome-code-doc
+# [LuaLS](https://github.com/luals/lua-language-server) Definitions for [AwesomeWM](https://github.com/awesomeWM/awesome)
 
-Code annotation for [Awesome](https://github.com/awesomeWM/awesome) window manager. The annotations are supported by [lua-language-server](https://github.com/LuaLS/lua-language-server/).
+Code annotation for [Awesome](https://github.com/awesomeWM/awesome) window manager.
 
-For more information about annotations see the [wiki](https://github.com/LuaLS/lua-language-server/wiki/Annotations).
+For more information about annotations see the [LuaLS website](https://luals.github.io/wiki/annotations/).
 
 # Installation
 
-Clone this repository:
 
-    $ git clone https://github.com/kosorin/awesome-code-doc
+1. Clone this repository:
+
+    ```
+    git clone https://github.com/SeleneCosmia/AwesomeWM
+    ```
+
+2. Add this repository as a [git submodule](https://git-scm.com/docs/git-submodule) by running the following command
+   in your config directory:
+
+   ```
+   git submodule add https://github.com/SeleneCosmia/AwesomeWM
+   ```
+
+   > [!TIP]
+   > You can optionally choose the path to clone the git submodule into by
+   > adding a path to the end of the above command. For example:
+   > ```
+   > git submodule add https://github.com/SeleneCosmia/AwesomeWM library/awesome
+   > ```
+   > This will clone the repo into a directory named 'awesome' inside of the
+   > library directory which is in the root of your git repository.
 
 # Setup
 
-> **_NOTE:_** There are several ways to define the settings. See the [wiki](https://github.com/LuaLS/lua-language-server/wiki/Configuration-File) for more information.
+> [!TIP]
+> There are several ways to define the settings. See the [wiki](https://luals.github.io/wiki/configuration/) for more information.
 
 
 ## .luarc.json ([lua-ls](https://github.com/LuaLS/lua-language-server/wiki/Libraries#placing-in-your-workspace))
 
-Add a .luarc.json to your config directory.
+Add a .luarc.json file to your config directory.
 In it, add the path to the cloned repository to the `workspace.library` setting:
 
 ```json
 {
     "workspace.library": [
-        "/path/to/awesome-code-doc"
+        "/path/to/this-repo"
     ]
 }
 ```
@@ -34,7 +54,7 @@ Add the path to the cloned repository to the `Lua.workspace.library` setting:
 
 ```json
 {
-  "Lua.workspace.library": ["/home/user/path/to/awesome-code-doc"]
+  "Lua.workspace.library": ["/home/user/path/to/this-repo"]
 }
 ```
 
@@ -49,7 +69,7 @@ require("lspconfig")["lua_ls"].setup({
       workspace = {
         library = {
           -- other library definition...
-          ["/path/to/awesome-code-doc"] = true
+          ["/path/to/this-repo"] = true
         }
       }
     }
@@ -72,7 +92,7 @@ require("plugins.lsp").add_server {
         Lua = {
             workspace = {
                 library = {
-                    ["/path/to/awesome-code-doc"] = true
+                    ["/path/to/this-repo"] = true
                 }
             }
         }

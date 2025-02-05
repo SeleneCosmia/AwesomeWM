@@ -1,10 +1,7 @@
 ---@meta lgi
 
----@class _lgi
----@field Playerctl _lgi.Playerctl
----@field Gio _lgi.Gio
----@field GLib unknown
----@field cairo unknown
+---@class lgi
+---@field Playerctl lgi.Playerctl
 local M
 
 return M

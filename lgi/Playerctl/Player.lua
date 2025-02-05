@@ -1,4 +1,4 @@
----@meta _
+---@meta lgi.Playerctl.Player
 
 ---@alias lgi.Playerctl.Metadata { value: table<string, any> }
 
@@ -74,7 +74,7 @@ function C:set_loop_status(loop_status) end
 function C:set_shuffle(shuffle) end
 
 
----@class _lgi.Playerctl.Player
+---@class lgi.Playerctl.Player
 ---@operator call: lgi.Playerctl.Player
 local M
 

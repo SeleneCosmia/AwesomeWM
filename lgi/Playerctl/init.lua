@@ -1,4 +1,4 @@
----@meta _
+---@meta lgi.Playerctl
 
 ---@alias lgi.Playerctl.Source
 ---| "NONE"
@@ -16,10 +16,12 @@
 ---| "PLAYLIST"
 
 
----@class _lgi.Playerctl
----@field Player _lgi.Playerctl.Player
----@field PlayerManager _lgi.Playerctl.PlayerManager
+---@class lgi.Playerctl
+---@field Player lgi.Playerctl.Player
+---@field PlayerManager lgi.Playerctl.PlayerManager
 local M
 
 ---@return lgi.Playerctl.PlayerName[]
 function M.list_players() end
+
+return M
