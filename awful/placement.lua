@@ -16,7 +16,7 @@
 ---@field attach boolean # When the parent geometry (like the screen) changes, re-apply the placement function. This will add a `detach_callback` function to the drawable. Call this to detach the function. This will be called automatically when a new attached function is set.
 ---@field update_workarea boolean # If attach is true, also update the screen workarea.
 
----@class _awful.placement
+---@class awful.placement
 local M
 
 ---Restore the geometry.
@@ -36,13 +36,13 @@ function M.restore(drawable, args) end
 function M.closest_corner(drawable, args) end
 
 ---Place the client so no part of it will be outside the screen (workarea).
----@param client unknown
+---@param client client
 ---@param args? table
 ---@return geometry
 function M.no_offscreen(client, args) end
 
 ---Place the client where there's place available with minimum overlap.
----@param client unknown
+---@param client client
 ---@param args? table
 ---@return geometry
 function M.no_overlap(client, args) end

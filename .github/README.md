@@ -20,14 +20,14 @@ For more information about annotations see the [LuaLS website](https://luals.git
    git submodule add https://github.com/SeleneCosmia/AwesomeWM
    ```
 
-> [!TIP]
-> You can optionally choose the path to clone the git submodule into by
-> adding a path to the end of the above command. For example:
-> ```
-> git submodule add https://github.com/SeleneCosmia/AwesomeWM library/awesome
-> ```
-> This will clone the repo into a directory named 'awesome' inside of the
-> library directory which is in the root of your git repository.
+   > [!TIP]
+   > You can optionally choose the path to clone the git submodule into by
+   > adding a path to the end of the above command. For example:
+   > ```
+   > git submodule add https://github.com/SeleneCosmia/AwesomeWM library/awesome
+   > ```
+   > This will clone the repo into a directory named 'awesome' inside of the
+   > library directory which is in the root of your git repository.
 
 # Setup
 

@@ -1,10 +1,10 @@
 ---@meta awful.client
 
----@class _awful.client
----@field focus _awful.client.focus
----@field property _awful.client.property
----@field swap _awful.client.swap
----@field urgent _awful.client.urgent
+---@class awful.client
+---@field focus awful.client.focus
+---@field property awful.client.property
+---@field swap awful.client.swap
+---@field urgent awful.client.urgent
 ---@field next unknown
 ---@field cycle unknown
 ---@field restore unknown
