@@ -1,67 +1,70 @@
----@meta _
+---@meta
 
 ---@class client
----@field window integer # The X window id.
----@field name string # The client title.
----@field skip_taskbar string # True if the client does not want to be in taskbar.
----@field type window_type # The window type.
----@field class string # The client class.
----@field instance string # The client instance.
+---@field window? integer # The X window id.
+---@field name? string # The client title.
+---@field skip_taskbar? string # True if the client does not want to be in taskbar.
+---@field type? window_type # The window type.
+---@field class? string # The client class.
+---@field instance? string # The client instance.
 ---@field pid? integer # The client PID, if available.
 ---@field role? string # The window role, if available.
----@field machine string # The machine the client is running on.
----@field icon_name string # The client name when iconified.
----@field icon image # The client icon as a surface.
----@field icon_sizes icon_size[] # The available sizes of client icons. This is a table where each entry contains the width and height of an icon.
----@field screen screen # Client screen.
----@field hidden boolean # Define if the client must be hidden (Never mapped, invisible in taskbar).
----@field minimized boolean # Define if the client must be iconified (Only visible in taskbar).
----@field size_hints_honor boolean # Honor size hints, e.g. respect size ratio.
----@field border_width integer # The client border width.
----@field border_color color # The client border color.
----@field urgent boolean # Set to true when the client ask for attention.
----@field content cairo_surface # A cairo surface for the client window content.
----@field opacity number # The client opacity.
----@field ontop boolean # The client is on top of every other windows.
----@field above boolean # The client is above normal windows.
----@field below boolean # The client is below normal windows.
----@field fullscreen boolean # The client is fullscreen or not.
----@field maximized boolean # The client is maximized (horizontally and vertically) or not.
----@field maximized_horizontal boolean # The client is maximized horizontally or not.
----@field maximized_vertical boolean # The client is maximized vertically or not.
+---@field machine? string # The machine the client is running on.
+---@field icon_name? string # The client name when iconified.
+---@field icon? image # The client icon as a surface.
+---@field icon_sizes? icon_size[] # The available sizes of client icons. This is a table where each entry contains the width and height of an icon.
+---@field screen? screen # Client screen.
+---@field hidden? boolean # Define if the client must be hidden (Never mapped, invisible in taskbar).
+---@field minimized? boolean # Define if the client must be iconified (Only visible in taskbar).
+---@field size_hints_honor? boolean # Honor size hints, e.g. respect size ratio.
+---@field border_width? integer # The client border width.
+---@field border_color? color # The client border color.
+---@field urgent? boolean # Set to true when the client ask for attention.
+---@field content? cairo_surface # A cairo surface for the client window content.
+---@field opacity? number # The client opacity.
+---@field ontop? boolean # The client is on top of every other windows.
+---@field above? boolean # The client is above normal windows.
+---@field below? boolean # The client is below normal windows.
+---@field fullscreen? boolean # The client is fullscreen or not.
+---@field maximized? boolean # The client is maximized (horizontally and vertically) or not.
+---@field maximized_horizontal? boolean # The client is maximized horizontally or not.
+---@field maximized_vertical? boolean # The client is maximized vertically or not.
 ---@field transient_for? client # The client the window is transient for.
----@field group_window integer # Window identification unique to a group of windows.
----@field leader_window integer # Identification unique to windows spawned by the same command.
----@field size_hints size_hints # A table with size hints of the client.
----@field motif_wm_hints motif_wm_hints # The motif WM hints of the client.
----@field sticky boolean # Set the client sticky (Available on all tags).
----@field modal boolean # Indicate if the client is modal.
----@field focusable boolean # True if the client can receive the input focus.
----@field shape_bounding shape # The client's bounding shape as set by awesome as a (native) cairo surface.
----@field shape_clip shape # The client's clip shape as set by awesome as a (native) cairo surface.
----@field shape_input shape # The client's input shape as set by awesome as a (native) cairo surface.
----@field client_shape_bounding shape # The client's bounding shape as set by the program as a (native) cairo surface.
----@field client_shape_clip shape # The client's clip shape as set by the program as a (native) cairo surface.
----@field startup_id string # The FreeDesktop StartId.
----@field valid boolean # If the client that this object refers to is still managed by awesome.
+---@field group_window? integer # Window identification unique to a group of windows.
+---@field leader_window? integer # Identification unique to windows spawned by the same command.
+---@field size_hints? size_hints # A table with size hints of the client.
+---@field motif_wm_hints? motif_wm_hints # The motif WM hints of the client.
+---@field sticky? boolean # Set the client sticky (Available on all tags).
+---@field modal? boolean # Indicate if the client is modal.
+---@field focusable? boolean # True if the client can receive the input focus.
+---@field shape_bounding? shape # The client's bounding shape as set by awesome as a (native) cairo surface.
+---@field shape_clip? shape # The client's clip shape as set by awesome as a (native) cairo surface.
+---@field shape_input? shape # The client's input shape as set by awesome as a (native) cairo surface.
+---@field client_shape_bounding? shape # The client's bounding shape as set by the program as a (native) cairo surface.
+---@field client_shape_clip? shape # The client's clip shape as set by the program as a (native) cairo surface.
+---@field startup_id? string # The FreeDesktop StartId.
+---@field valid? boolean # If the client that this object refers to is still managed by awesome.
 ---@field first_tag? tag # The first tag of the client.
----@field buttons awful.button[] # Get or set mouse buttons bindings for a client.
----@field keys awful.key[] # Get or set keys bindings for a client.
----@field marked boolean # If a client is marked or not.
----@field is_fixed boolean # Return if a client has a fixed size or not.
----@field immobilized_horizontal boolean # Is the client immobilized horizontally?
----@field immobilized_vertical boolean # Is the client immobilized vertically?
----@field floating boolean # The client floating state.
----@field x integer # The x coordinates.
----@field y integer # The y coordinates.
----@field width integer # The width of the client.
----@field height integer # The height of the client.
----@field dockable boolean # If the client is dockable.
----@field requests_no_titlebar boolean # If the client requests not to be decorated with a titlebar.
----@field shape shape # Set the client shape.
----@field active boolean # Return true if the client is active (has focus).
----@field struts thickness # Return client struts (reserved space at the edge of the screen).
+---@field buttons? awful.button[] # Get or set mouse buttons bindings for a client.
+---@field keys? awful.key[] # Get or set keys bindings for a client.
+---@field marked? boolean # If a client is marked or not.
+---@field is_fixed? boolean # Return if a client has a fixed size or not.
+---@field immobilized_horizontal? boolean # Is the client immobilized horizontally?
+---@field immobilized_vertical? boolean # Is the client immobilized vertically?
+---@field floating? boolean # The client floating state.
+---@field x? integer # The x coordinates.
+---@field y? integer # The y coordinates.
+---@field width? integer # The width of the client.
+---@field height? integer # The height of the client.
+---@field dockable? boolean # If the client is dockable.
+---@field requests_no_titlebar? boolean # If the client requests not to be decorated with a titlebar.
+---@field shape? shape # Set the client shape.
+---@field active? boolean # Return true if the client is active (has focus).
 local C
+
+---@param struts struts # Return client struts (reserved space at the edge of the screen).
+---@return table #Returns a table with strut values.
+function C:struts(struts) end
 
 ---Check if a client is visible on its screen.
 ---@return boolean # A boolean value, true if the client is visible, false otherwise.
@@ -199,7 +202,7 @@ function C:weak_connect_signal(name, func) end
 ---@param func fun(...: any) # The function to call
 function C:disconnect_signal(name, func) end
 
----@class _client
+---@class _client : client
 ---@field [integer] client
 ---@field focus? client # The focused `client` or `nil` (in case there is none).
 client = {}

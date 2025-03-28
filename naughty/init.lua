@@ -1,71 +1,91 @@
 ---@meta naughty
 
+---`naughty`
+---
+---Notification library.
+---
+---For more details on creating notifications, see: [naughty.notification](lua://naughty.notification).
 ---@class naughty
---- When suspended, no notificaion widget should interrupt the user.
---- This is useful, for example, when watching movies or doing presentations.
----@field suspended? boolean #The global suspension state.
+---@field suspended? boolean #The global suspension state. Default value = `false`
 ---@field expiration_paused? boolean #Do not allow notifications to auto-expire.
 ---@field active? table #A list of naughty.notification objects.
-local C
+---@field has_display_handler? boolean #True when there is a handler connected to `request::display`.
+---@field auto_reset_timeout? boolean #If the timeout needs to be reset when a property changes.
+---@field image_animations_enabled? boolean #Enable or disable naughty ability to claim to support animations.
+---@field persistence_enabled? boolean #Enable or disable the persistent notifications.
+---@field notification naughty.notification
+local M = {}
 
-C.suspended = false
-C.expiration_paused = false
+--- When suspended, no notificaion widget should interrupt the user.
+---
+--- This is useful, for example, when watching movies or doing presentations.
+---
+---Emit signals:
+--- - **`property::suspended`** When the suspended value changes
+---   - **`self`** *naughty* 󰁔 The object which changed.
+---   - **`new_value`** *suspended* 󰁔 The new value affected to the property.
+M.suspended = false
+
+M.expiration_paused = false
+
+M.active = {}
+
+M.auto_reset_timeout = true
+
+M.image_animations_enabled = false
+
+M.persistence_enabled = false
+
+
+---The reason why a notification is to be closed.
+---@enum naughty.notification_closed_reason
+M.notification_closed_reason = {
+  too_many_on_screen = -2,
+  silent = -1,
+  expired = 1,
+  dismissed_by_user = 2,
+  dismissed_by_command = 3,
+  undefined = 4,
+}
 
 ---Destroy all notifications on given screens.
 ---@param screens? table
 ---@param reason naughty.notification_closed_reason
 ---@return boolean|nil
-function C.destroy_all_notifications(screens, reason) end
-
----The reason why a notification is to be closed
----@class (exact) naughty.notification_closed_reason
----@field too_many_on_screen? number
----@field silent? number
----@field expired? number
----@field dismissed_by_user? number
----@field dismissed_by_command? number
----@field undefined? number
-C.notification_closed_reason = {}
-C.notification_closed_reason.too_many_on_screen = -2
-C.notification_closed_reason.silent = -1
-C.notification_closed_reason.expired = 1
-C.notification_closed_reason.dismissed_by_user = 2
-C.notification_closed_reason.dismissed_by_command = 3
-C.notification_closed_reason.undefined = 4
+function M.destroy_all_notifications(screens, reason) end
 
 ---Get notification by ID
----@param id integer ID of the notification
----`naughty.notification` or `nil`
----*notification object* if it was found, *nil* otherwise
----@return naughty.notification|nil
-function C.get_by_id(id) end
+---
+--- Returns: `naughty.notification` or `nil`
+---    - *`naughty.notification object`* if it was found
+---    - *`nil`* otherwise
+---@param id integer #ID of the notification
+---@return naughty.notification | nil
+function M.get_by_id(id) end
 
 ---Connect a global signal on the module.
 --- ---
 --- Functions connected to this signal source will be executed when any module object
---- emits the signal.
+--- emits the given signal.
 ---
---- It is also used for some generic module signals such as `request::display`.
----@param name naughty_signals # The name of the signal
----@param func fun() # Function to attach
-function C.connect_signal(name, func) end
+--- It is also used for some generic module signals such as `"request::display"`.
+---@param name naughty_signals #The name of the signal.
+---@param func fun() #Function to attach.
+function M.connect_signal(name, func) end
 
 ---Emit a module signal.
----@param name naughty_signals # The signal name
----@param ... any # The signal callback arguments
-function C.emit_signal(name, ...) end
+---@param name naughty_signals #The name of the signal to emit.
+---@param ... any #The signal callback arguments
+function M.emit_signal(name, ...) end
 
 ---Disconnect a signal from a source.
 ---@param name naughty_signals # The name of the signal
 ---@param func fun() # The attached function
 ---@return boolean #If the disconnection was successful
-function C.disconnect_signal(name, func) end
+function M.disconnect_signal(name, func) end
 
 ---The default handler for `request::screen`.
 ---  It selects **`awful.screen.focused()`**.
-function C.default_screen_handler() end
-
----@class naughty
-local M
+function M.default_screen_handler() end
 
 return M

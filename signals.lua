@@ -123,28 +123,38 @@
 ---| "property::y"
 ---| "property::surface"
 
+---@alias naughty_signals
+---| '"request::display_error"' # Emitted when an error occurred and requires attention.
+---| '"added"' # Emitted when a notification is created.
+---| '"destroyed"' # Emitted when a notification is destroyed.
+---| '"request::display"' # Emitted when a notification has to be displayed.
+---| '"request::preset"' # Emitted when a notification needs pre-display configuration.
+---| '"request::action_icon"' # Emitted when an action requires an icon it doesn't know.
+---| '"request::icon"' # Emitted when a notification icon could not be loaded.
+---| '"request::screen"' # Emitted when the screen is not defined or being removed.
+
 ---@alias _screen_signals
----| "scanning" # AwesomeWM is about to scan for existing screens.
----| "scanned" # AwesomeWM is done scanning for screens.
----| "primary_changed"
----| "added" # This signal is emitted when a new screen is added to the current setup.
----| "removed" # This signal is emitted when a screen is removed from the setup.
----| "list" # This signal is emitted when the list of available screens changes.
----| "swapped" # When 2 screens are swapped
----| "property::viewports" # This signal is emitted when the list of physical screen viewport changes.
----| "request::desktop_decoration" # Emitted when a new screen is added.
----| "request::wallpaper" # Emitted when a new screen needs a wallpaper.
----| "request::create" # When a new (physical) screen area has been added.
----| "request::remove" # When a physical monitor viewport has been removed.
----| "request::resize" # When a physical viewport resolution has changed or it has been replaced.
----| "tag::history::update" # When the tag history changed.
+---| '"scanning"' # AwesomeWM is about to scan for existing screens.
+---| '"scanned"' # AwesomeWM is done scanning for screens.
+---| '"primary_changed"'
+---| '"added"' # This signal is emitted when a new screen is added to the current setup.
+---| '"removed"' # This signal is emitted when a screen is removed from the setup.
+---| '"list"' # This signal is emitted when the list of available screens changes.
+---| '"swapped"' # When 2 screens are swapped
+---| '"property::viewports"' # This signal is emitted when the list of physical screen viewport changes.
+---| '"request::desktop_decoration"' # Emitted when a new screen is added.
+---| '"request::wallpaper"' # Emitted when a new screen needs a wallpaper.
+---| '"request::create"' # When a new (physical) screen area has been added.
+---| '"request::remove"' # When a physical monitor viewport has been removed.
+---| '"request::resize"' # When a physical viewport resolution has changed or it has been replaced.
+---| '"tag::history::update"' # When the tag history changed.
 
 ---@alias screen_signals
----| "property::geometry"
----| "property::index"
----| "property::workarea"
----| "property::padding"
----| "property::outputs"
+---| '"property::geometry"'
+---| '"property::index"'
+---| '"property::workarea"'
+---| '"property::padding"'
+---| '"property::outputs"'
 
 ---@alias _tag_signals
 ---| "request::select" # Emitted when a tag requests to be selected.

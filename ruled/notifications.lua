@@ -1,7 +1,7 @@
----@meta ruled.notification
+---@meta ruled.notifications
 ---@todo
 
----@class _ruled.notification
+---@class ruled.notifications
 ---@field remove_rule_source unknown
 ---@field apply unknown
 ---@field append_rule unknown

@@ -3,6 +3,7 @@
 ---@alias path string
 
 ---@alias shape fun(cr: cairo_context, width: number, height: number)|false
+---@alias struts { left: integer, right: integer, top: integer, bottom: integer }
 ---@alias thickness { top: number, right: number, bottom: number, left: number }|number
 ---@alias bounding_geometry { honor_padding: boolean, honor_workarea: boolean, margins: thickness, tag: tag, parent: drawable, bounding_rect: unknown }
 ---@alias geometry { x: number, y: number, width: number, height: number }

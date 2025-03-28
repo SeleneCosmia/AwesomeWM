@@ -192,7 +192,7 @@ function M.maximize_horizontally(drawable, args) end
 function M.scale(drawable, args) end
 
 ---@alias placement_position "top"|"right"|"bottom"|"left"
----@alias placement_anchor "fron"|"middle"|"back"
+---@alias placement_anchor "front"|"middle"|"back"
 
 ---Move a drawable to a relative position next to another one.
 ---@param drawable unknown

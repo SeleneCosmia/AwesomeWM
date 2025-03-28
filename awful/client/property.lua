@@ -1,5 +1,5 @@
----@meta _
+---@meta
 
----@class _awful.client.property
+---@class awful.client.property
 ---@field persist unknown
 local M

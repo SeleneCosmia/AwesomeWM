@@ -1,8 +1,8 @@
 ---@meta ruled
 
----@class _ruled
----@field client _ruled.client
----@field notification _ruled.notification
+---@class ruled
+---@field client ruled.client
+---@field notification ruled.notifications
 local M
 
 return M

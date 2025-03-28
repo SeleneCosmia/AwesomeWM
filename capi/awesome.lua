@@ -1,4 +1,4 @@
----@meta _
+---@meta
 
 ---@class _awesome
 ---@field version string # The AwesomeWM version.
