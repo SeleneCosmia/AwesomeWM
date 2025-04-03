@@ -1,5 +1,4 @@
 ---@meta ruled.client
----@todo
 
 ---@alias ruled.client.rule.source
 ---| "awful.rules"
@@ -8,7 +7,8 @@
 ---| string
 
 ---@alias ruled.client.match fun(c: client, rule: table): boolean
----@alias ruled.client.match_any fun(C: client, rule: table): boolean
+---@alias ruled.client.match_any fun(c: client, rule: table): boolean
+---@alias ruled.client.matches fun(c: client, entry: rule_components): boolean
 
 ---@class ruled.client.rules
 ---@field properties client
@@ -47,6 +47,11 @@ local M
 ---Add a new rule to the default set.
 ---@param rule rule_components
 function M.append_rule(rule) end
+
+
+---@param signal _client_signals
+---@param
+function M.connect_signal(signal, func) end
 
 ---Add a new rule source.
 ---@param name string #The provider name. It **must** be unique.

@@ -1,37 +1,36 @@
 ---@meta awful
 
 ---@class awful
----@field autofocus awful.autofocus
----@field placement awful.placement
----@field screen awful.screen
----@field popup awful.popup
+---@field autofocus _awful.autofocus
+---@field button awful.button
 ---@field client unknown
----@field tag unknown
----@field widget unknown
+---@field completion awful.completion
+---@field keyboard awful.keyboard
 ---@field keygrabber awful.keygrabber
 ---@field key awful.key
----@field keyboard awful.keyboard
----@field mouse unknown
----@field button awful.button
----@field completion unknown
 ---@field layout awful.layout
+---@field menu unknown
+---@field mouse unknown
 ---@field permissions awful.permissions
+---@field placement awful.placement
+---@field popup awful.popup
 ---@field prompt unknown
 ---@field rules unknown
+---@field screen awful.screen
+---@field screenshot awful.screenshot
 ---@field spawn unknown
----@field util unknown
+---@field tag _awful.tag
 ---@field titlebar unknown
 ---@field tooltip unknown
+---@field util unknown
 ---@field wallpaper unknown
 ---@field wibar unknown
----@field screenshot unknown
----@field menu unknown
+---@field widget unknown
 local M
 
 ---@deprecated
---- `awful.autofocus` has been deprecated.
---- Use `awful.permissions` instead.
----@class awful.autofocus
+--- `awful.autofocus` has been replaced with `awful.permissions`.
+---@class _awful.autofocus
 ---@see awful.permissions
 M.autofocus = {}
 

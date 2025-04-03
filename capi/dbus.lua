@@ -1,5 +1,6 @@
 ---@meta _
 
+--- This api has been deprecated, use `lgi.GDBus` instead of this module.
 ---@class _dbus
 dbus = {}
 

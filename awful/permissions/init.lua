@@ -17,7 +17,7 @@
 ---For example, if a tiled client asks to be resized or moved, the permission
 ---and deny it. In the documentation, many objects and properties have a
 ---"permissions" section you can display by clicking "show more".
----@class _awful.permissions
+---@class awful.permissions
 ---@field generic_activate_filters awful.permissions.activate_filter[] # The list of all registered generic `request::activate` (focus stealing) filters. If a filter is added to only one context, it will be in `permissions.contextual_activate_filters`["context_name"].
 ---@field contextual_activate_filters table<string, awful.permissions.activate_filter> # The list of all registered contextual `request::activate` (focus stealing) filters. If a filter is added to only one context, it will be in `permissions.generic_activate_filters`.
 local M

@@ -1,6 +1,6 @@
 ---@meta _
 
----@class drawable
+---@class _drawable
 ---@field image? string|cairo_surface # Drawable object.
 local C
 
@@ -9,11 +9,13 @@ local C
 function C:refresh() end
 
 ---Get drawable geometry.
----@return geometry
+---
+---Geometry consists of **`x`** and **`y`** coordinates & **`width`** and **`height`**.
+---@return geometry geometry #A table with drawable coordinates and geometry.
 function C:geometry() end
 
 
----@class _drawable
+---@class drawable : _drawable
 ---@field [integer] drawable
 drawable = {}
 
@@ -32,6 +34,6 @@ function drawable.connect_signal(name, func) end
 function drawable.disconnect_signal(name, func) end
 
 ---Emit a signal.
----@param name _drawable_signals # A string with the event name
----@param ... any # The signal arguments
+---@param name _drawable_signals # The name of the signal.
+---@param ... any # Extra arguments for the callback functions. Each connected function receives the object as first argument and then any extra arguments are given to `emit_signal()`.
 function drawable.emit_signal(name, ...) end
