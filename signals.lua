@@ -47,6 +47,7 @@
 ---| "'property::floating_geometry'" # The last geometry when client was floating.
 ---| "'request::titlebars'" # Emitted when a client needs to get a titlebar.
 ---| "'request::border'" # Emitted when the border client might need to be update.
+---| string
 
 ---@alias client_signals
 ---| "'request::manage'" # Emitted when a new client appears and gets managed by Awesome.

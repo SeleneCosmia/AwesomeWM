@@ -1,6 +1,6 @@
 ---@meta ruled
 
----@alias rule_components { properties: table, callback?: fun(), rule: client[], rule_any: { [string]: client[] }, except: client[], except_any: { [string]: client[] }, rule_every: table<client>, rule_lesser: table<client[]>, rule_greater: client[], id: any }
+---@alias rule_components { properties: table, callback?: fun(), rule: client[], rule_any: client[], except: client[], except_any: client[], rule_every: client[], rule_lesser: client[], rule_greater: client[], id: any }
 
 ---@class ruled
 ---@field client ruled.client

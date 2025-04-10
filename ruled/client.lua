@@ -28,12 +28,11 @@
 ---@field extra_properties unknown
 ---@field high_priority_properties unknown
 ---@field delayed_properties unknown
----@field append_rules unknown
 ---@field remove_rule unknown
 ---@field match ruled.client.match
 ---@field match_any ruled.client.match_any
 ---@field matches fun(c: client, entry: table): boolean
----@field matching_rules fun(c: client, rules: table): table
+---@field matching_rules fun(c: client, rules: rule_components[]): table
 ---@field matches_list fun(c: client, rules: table)
 ---@field remove_rule_source unknown
 ---@field apply unknown
@@ -43,10 +42,14 @@
 local M
 
 ---Add a new rule to the default set.
----@param rule rule_components
+---@param rule rule_components A valid rule.
 function M.append_rule(rule) end
 
----@param signal _client_signals
+---Add new rules to the default set.
+---@param rules table<rule_components> A table with rules.
+function M.append_rules(rules) end
+
+---@param signal _client_signals|'request::rules'
 ---@param func fun()
 function M.connect_signal(signal, func) end
 
@@ -57,7 +60,5 @@ function M.connect_signal(signal, func) end
 ---@param precede? table #A list of names of sources this source has priority over.
 ---@return boolean #Returns false if a dependency conflict was found.
 function M.add_rule_source(name, callback, depends_on, precede) end
-
-function M.matches_list() end
 
 return M
