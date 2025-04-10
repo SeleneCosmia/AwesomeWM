@@ -10,25 +10,24 @@
 ---@alias ruled.client.match_any fun(c: client, rule: table): boolean
 ---@alias ruled.client.matches fun(c: client, entry: rule_components): boolean
 
----@class ruled.client.rules
----@field properties client
----@field id? table|string|number|fun()
----@field callback? fun(c: client)
----@field rule? table
----@field rule_any? table
----@field rule_every? table
----@field except? table
----@field except_any? table
----@field rule_lesser? table
----@field rule_greater? table
+---|class ruled.client.rules
+---|field properties client
+---|field id? table|string|number|fun()
+---|field callback? fun(c: client)
+---|field rule? table
+---|field rule_any? table
+---|field rule_every? table
+---|field except? table
+---|field except_any? table
+---|field rule_lesser? table
+---|field rule_greater? table
 
----@class rule_components : ruled.client.rules
+---|class rule_components : ruled.client.rules
 
 ---@class ruled.client
 ---@field extra_properties unknown
 ---@field high_priority_properties unknown
 ---@field delayed_properties unknown
----@field append_rule unknown
 ---@field append_rules unknown
 ---@field remove_rule unknown
 ---@field match ruled.client.match
@@ -40,7 +39,6 @@
 ---@field apply unknown
 ---@field execute unknown
 ---@field emit_signal unknown
----@field connect_signal fun()
 ---@field disconnect_signal unknown
 local M
 
@@ -48,9 +46,8 @@ local M
 ---@param rule rule_components
 function M.append_rule(rule) end
 
-
 ---@param signal _client_signals
----@param
+---@param func fun()
 function M.connect_signal(signal, func) end
 
 ---Add a new rule source.

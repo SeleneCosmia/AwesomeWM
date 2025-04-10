@@ -1,6 +1,6 @@
 ---@meta awful.keyboard
 
----@class _awful.keyboard
+---@class awful.keyboard
 ---@field append_global_keybindings unknown
 ---@field emulate_key_combination unknown
 ---@field append_global_keybinding unknown

@@ -9,7 +9,7 @@
 ---@field keygrabber awful.keygrabber
 ---@field key awful.key
 ---@field layout awful.layout
----@field menu unknown
+---@field menu awful.menu
 ---@field mouse unknown
 ---@field permissions awful.permissions
 ---@field placement awful.placement
